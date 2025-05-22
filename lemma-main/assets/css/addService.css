@@ -1,0 +1,148 @@
+.quicksand {
+    font-family: "Quicksand", sans-serif;
+}
+
+.playfair-display {
+    font-family: "Playfair Display", serif;
+}
+/* General Body Styling */
+body {
+    font-family: "Quicksand", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #69594e;
+    
+}
+
+/* Profile Section */
+#profile {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    color: #69594e;
+    margin-bottom: 20px;
+}
+
+#form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styling */
+form {
+    font-family:  sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+.form-group:first-of-type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center the upload button */
+}
+
+label {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+input, select, textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: sans-serif;
+}
+
+input:focus, select:focus {
+    border-color: #69594e;
+    outline: none;
+}
+
+/* Custom File Upload Styling */
+.file-upload-label {
+    display: inline-block;
+    background-color: #69594e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+.file-upload-label:hover {
+    background-color: #5a4c44;
+}
+
+.file-upload-label i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Hide File Input */
+input[type="file"] {
+    display: none;
+}
+
+/* Preview Image Styling */
+#image-preview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#image-preview img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#image-preview img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Submit Button */
+.submit-btn {
+    background: #69594e;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background: #5a4c44;
+}
+
+.error-message {
+    color: #69594e;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-family: "Quicksand", sans-serif;
+    display: none; /* Hidden by default */
+}

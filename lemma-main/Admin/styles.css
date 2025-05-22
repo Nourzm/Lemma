@@ -1,0 +1,359 @@
+/* Root Variables for Colors and Sizes */
+:root {
+  --primary-color: #69594e;
+  --secondary-color: #f9f7f6;
+  --hover-color: #554740;
+  --text-color: #3a3a3a;
+  --sidebar-width: 250px;
+  --header-height: 60px;
+  --border-radius: 8px;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+/* Admin Container */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+/* Mobile Sidebar Toggle */
+.sidebar-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1001;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.logo {
+  padding: 0 20px;
+  margin-bottom: 30px;
+}
+
+.logo h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar nav a {
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 16px;
+}
+
+.sidebar nav a i {
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background-color: var(--hover-color);
+  transform: translateX(5px);
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: 5px 10px;
+  flex: 0 1 400px;
+}
+
+.search-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar input {
+  border: none;
+  background: none;
+  padding: 8px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.search-bar button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.search-bar button i {
+  font-size: 16px;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+}
+
+.admin-profile i {
+  font-size: 20px;
+}
+
+/* Table Styles */
+.table-container {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  min-width: 600px;
+}
+
+th,
+td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+tr:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Button Container for Actions */
+.container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px;
+  width: 100px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  border-radius: var(--border-radius);
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Feedback Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--primary-color);
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--hover-color);
+  box-shadow: 0px 0px 5px rgba(85, 71, 64, 0.5);
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  header {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .search-bar {
+    flex: 1 1 100%;
+    order: 2;
+  }
+
+  .admin-profile {
+    order: 1;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-content {
+    padding: 15px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  .table-container {
+    padding: 15px;
+  }
+
+  .modal-content {
+    margin: 10% auto;
+    padding: 20px;
+  }
+
+  .container {
+    flex-direction: row; /* Keep buttons in row */
+    gap: 5px; /* Reduce gap on mobile */
+  }
+
+  .container button {
+    padding: 8px;
+    width: auto; /* Allow buttons to size based on content */
+    min-width: 60px; /* Minimum width for buttons */
+    font-size: 14px; /* Slightly smaller font on mobile */
+  }
+}

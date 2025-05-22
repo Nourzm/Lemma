@@ -1,0 +1,132 @@
+.coverflow-section {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center; /* Align items at the top */
+
+  background-color: #f7f4f3;
+  gap: 60px; /* Increase space between the images and description */
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.coverflow-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.coverflow {
+  display: flex;
+  gap: 15px;
+  perspective: 1500px;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.coverflow-item {
+  width: 20%; /* Smaller photo size */
+  height: 350px;
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border: 5px solid #e6e6e6;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 30deg))
+    translateZ(calc(150px - var(--i) * 75px));
+  transition: transform 0.5s, opacity 0.5s;
+  opacity: calc(1 - var(--i) * 0.2);
+}
+
+.coverflow-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.coverflow-item:hover {
+  transform: translateZ(250px) rotateY(0deg);
+  z-index: 10;
+  opacity: 1;
+}
+
+.description {
+  padding: 20px;
+  max-width: 70%;
+  text-align: center;
+  align-items: center;
+  display: block;
+  /* Centers the button horizontally */
+}
+
+.description p {
+  font-family: "Quicksand", sans-serif;
+  color: #69594e;
+  margin: 20px 0;
+
+  font-size: 35px;
+
+  white-space: normal;
+}
+
+.learn-more-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #3d342e, #69594e);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+.learn-more-button:hover {
+  background: linear-gradient(90deg, #69594e, #3d342e);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .coverflow-section {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 30px;
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+
+  .coverflow-container {
+    flex-direction: column; /* Stack photos and description vertically */
+    align-items: center; /* Center items in the column */
+    gap: 20px;
+  }
+
+  .coverflow {
+    gap: 10px;
+    justify-content: center; /* Center the photo carousel */
+  }
+
+  .coverflow-item {
+    width: 150px;
+    height: 200px;
+  }
+
+  .description {
+    text-align: center;
+    max-width: 100%; /* Allow description to take full width */
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  .description p {
+    font-size: 20px;
+  }
+
+  .learn-more-button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}

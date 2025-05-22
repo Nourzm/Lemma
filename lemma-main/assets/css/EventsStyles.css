@@ -1,0 +1,239 @@
+/* Global Styles - Resets and ensures uniformity */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f4f3;
+  color: #69594e;
+  line-height: 1.5;
+  font-family: "Playfair Display", serif;
+}
+
+/* Services Section - Container for service cards */
+.Services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Service Cards - Positioning and layout */
+.section {
+  position: relative;
+  margin-bottom: 100px;
+  min-height: 350px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.section:nth-child(even) {
+  justify-content: flex-start;
+}
+
+/* Styling images inside sections */
+.section img {
+  width: 45%;
+  height: 300px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 15px;
+  padding: 8px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.section img:hover {
+  transform: scale(1.02);
+}
+.section:nth-child(even) img {
+  left: auto;
+  right: 0;
+}
+
+/* Content styling inside each service card */
+.content {
+  width: 70%;
+  background-color: #e6ded8;
+  padding: 40px;
+  margin-top: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+.content:hover {
+  transform: translateY(-5px);
+}
+.content h2 {
+  color: #69594e;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+/* Adjustments for even sections */
+.section:nth-child(even) .content {
+  text-align: left;
+  padding-left: 2cm;
+}
+
+.section:nth-child(even) .content p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-right: 4cm;
+  line-height: 1.6;
+}
+
+/* Adjustments for odd sections */
+.section:nth-child(odd) .content p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  margin-left: 5cm;
+}
+
+.content p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+/* Left-align heading for odd sections */
+.section:nth-child(odd) .content h2 {
+  margin-left: 5cm;
+}
+
+/* Styling for quotes */
+.quote {
+  display: block;
+  font-weight: bold;
+  color: #666; /* Slightly darker color for better contrast */
+  font-size: 1rem; /* Increase font size */
+  line-height: 0.8; /* Improve readability */
+  padding: 10px 15px; /* Increase padding for a more spacious look */
+  margin-bottom: 10px; /* Increase bottom margin for spacing */
+  border-left: 5px solid #a87b7b; /* Visual marker for quotes */
+}
+
+/* Link adjustments for odd sections */
+.section:nth-child(odd) .content a {
+  margin-left: 5cm;
+}
+
+/* General link styling */
+.content a {
+  color: #a87b7b;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.content a:hover {
+  color: #805959;
+}
+
+/* Responsive Design - Adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .Services {
+    padding: 40px 40px;
+  }
+
+  .content {
+    width: 60%;
+  }
+
+  .section img {
+    width: 40%;
+  }
+}
+
+@media (max-width: 992px) {
+  .content {
+    width: 55%;
+  }
+
+  .section img {
+    width: 45%;
+  }
+
+  .section:nth-child(even) .content p,
+  .section:nth-child(odd) .content p,
+  .section:nth-child(odd) .content h2,
+  .section:nth-child(odd) .content a {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .section:nth-child(even) .content {
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Event_Name h1 {
+    font-size: 3rem;
+  }
+
+  .section {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+  }
+
+  .section img {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    width: 100%;
+    margin-top: 0;
+    padding: 30px;
+  }
+
+  .section:nth-child(even) .content,
+  .section:nth-child(odd) .content {
+    text-align: left;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    height: 300px;
+  }
+
+  .Event_Name h1 {
+    font-size: 2.5rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+  }
+}
+/* Update media query for smaller screens */
+@media (max-width: 576px) {
+  .header {
+    height: 300px;
+  }
+
+  .header-video {
+    height: 100%;
+  }
+}

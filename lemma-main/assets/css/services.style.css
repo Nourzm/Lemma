@@ -1,0 +1,650 @@
+/* Global Styles - Resets and ensures uniformity */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* QuickSand Font */
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Header Section */
+
+.description {
+  padding: 20px;
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 200px;
+  margin-bottom: 10px;
+  z-index: 5;
+  margin-top: -80px;
+}
+/* Gallery Styling */
+.Services {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f4f3;
+  padding: 60px 20px;
+  position: relative;
+}
+#types-of-events {
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  color: #3d342e;
+  font-size: 2.5em;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+
+.cards-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  /* Set a maximum width for the cards area */
+  margin: 0 auto; /* Center the cards area */
+}
+.card {
+  width: 400px;
+  height: 400px; /* Ensures fixed size for all cards */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(105, 89, 78, 0.5);
+  transition: transform 0.3s;
+  border: 10px solid #ffffff;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(to top, rgba(105, 89, 78, 0.8), transparent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.5s;
+  color: #f3efec;
+}
+.overlay h3 {
+  font-family: "Playfair Display", serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+}
+
+.overlay p {
+  font-family: "Quicksand", sans-serif;
+}
+.button-explore-details {
+  display: inline-block;
+  background-color: #f3efec;
+  color: #69594e;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 1rem; /* Font size */
+  transition: background-color 0.3s;
+  transition: transform 0.1s;
+}
+.button-explore-details:hover {
+  transform: scale(1.05);
+}
+.card:hover .overlay {
+  height: 100%;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+.overlay.button {
+  background-color: #f3efec;
+  color: #69594e;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+}
+
+.rating-section h3 {
+  margin: 10px 0; /* Space above and below the text */
+  font-size: 18px; /* Adjust font size */
+}
+.star {
+  font-size: 40px;
+  margin-left: 5px;
+  margin-top: -200px;
+  cursor: pointer;
+  color: lightgray;
+}
+.star:hover,
+.star.selected {
+  color: #ffa500; /* Change color on hover or selection */
+}
+
+.message-section textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.popup-content h2 {
+  margin: 20px 0;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  margin: 10px 0;
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+.quote {
+  font-style: italic;
+  color: #555; /* Adjust color as needed */
+  margin: 20px 0; /* Add some spacing */
+  border-left: 4px solid #69594e; /* Left border for quote effect */
+  padding-left: 10px; /* Padding for the text */
+}
+.purchase-button {
+  padding: 10px 20px;
+  background-color: #837062; /* Match your theme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  font-family: "quicksand";
+}
+
+.purchase-button:hover {
+  background-color: #af9582; /* Darker shade on hover */
+}
+
+.provider-tab-list {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 20px 0;
+  list-style: none;
+  position: relative; /* For positioning the underline */
+}
+
+.provider-tab-list li {
+  flex: 1;
+  text-align: center;
+
+  position: relative; /* For the underline effect */
+}
+
+.provider-tab-list button {
+  background: none;
+  border: none;
+  padding: 15px 20px;
+  font-family: "Quicksand", sans-serif;
+  color: #69594e;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.provider-tab-list button:hover {
+  color: #d5d0d0; /* Change color on hover */
+}
+
+.provider-tab-list button.active {
+  color: #d5d0d0;
+  background-color: #af9582; /* Active color */
+}
+
+/* Underline Effect */
+.provider-tab-list li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px; /* Adjust according to spacing */
+  width: 0; /* Start with width 0 */
+  height: 4px; /* Height of the underline */
+  background: #837062; /* Color of the underline */
+  transition: 0.3s ease, width 0.3s ease; /* Smooth transition */
+  border-radius: 2px;
+  transform: translateX(-50%); /* Rounded edges */
+}
+
+.provider-tab-list li:hover::after {
+  width: 100%;
+  visibility: visible; /* Expand underline on hover */
+}
+
+/* To animate the active underline */
+.provider-tab-list li.active::after {
+  left: -200; /* Position under the active tab */
+  width: 100%;
+  visibility: hidden;
+  /* Full width for the active tab */
+}
+
+.provider-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  /* Align content to the top */
+}
+.provider-item img {
+  width: 100%; /* Scale the image to fit */
+  height: 4%; /* Maintain aspect ratio */
+  border-radius: 10px;
+  /* Optional: rounded corners */
+}
+
+.provider-image {
+  max-width: 500px;
+}
+.provider-info {
+  flex: 1;
+  padding: 10px;
+}
+.service-item {
+  display: none;
+  text-align: center;
+}
+
+.rating-section {
+  margin-left: 5px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+/* Comment Section Styles */
+/* Blurred background effect */
+body.blur {
+  overflow: hidden; /* Prevent scrolling */
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(232, 223, 214, 0.5); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  z-index: 1000; /* Ensure it is behind the popup but above other content */
+  display: none; /* Hidden by default */
+}
+
+/* Other existing styles... */
+
+/* Modern styling for comment section */
+.comment-section {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.comment-section textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  margin-bottom: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.comment-section textarea:focus {
+  border-color: #837062;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(131, 112, 98, 0.2);
+}
+
+.comments-list {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 16px;
+}
+
+.comment {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease;
+}
+
+.comment:hover {
+  transform: translateX(4px);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.comment img{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #837062;
+}
+
+.user-photo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #837062;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.comment-text {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Scrollbar styling */
+.comments-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.comments-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
+  background: #837062;
+  border-radius: 3px;
+}
+
+.comments-list::-webkit-scrollbar-thumb:hover {
+  background: #6b5a4f;
+}
+.date-location {
+  margin-top: 20px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
+
+.date-location label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  color: #69594e;
+}
+
+.date-location input[type="date"],
+.date-location input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.date-location input[type="date"]:focus,
+.date-location input[type="text"]:focus {
+  border-color: #837062;
+  outline: none;
+  box-shadow: 0 0 5px rgba(131, 112, 98, 0.5);
+}
+
+#date-error-message,
+#availability-message {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.purchase-button {
+  padding: 10px 20px;
+  background-color: #837062; /* Match your theme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  font-family: "Quicksand", sans-serif;
+}
+
+.purchase-button:hover {
+  background-color: #af9582; /* Darker shade on hover */
+}
+
+.pay-button {
+  padding: 10px 20px;
+  background-color: #837062; /* Match your theme */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+  font-family: "Quicksand", sans-serif;
+}
+
+.pay-button:hover {
+  background-color: #af9582; /* Darker shade on hover */
+}
+/* Responsive Design Adjustments */
+.date-location {
+  margin-top: 20px;
+}
+
+.date-location label {
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  color: #69594e;
+}
+
+.date-location input[type="date"],
+.date-location input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.date-location input[type="date"]:focus,
+.date-location input[type="text"]:focus {
+  border-color: #837062;
+  outline: none;
+  box-shadow: 0 0 5px rgba(131, 112, 98, 0.5);
+}
+
+#date-error-message,
+#availability-message {
+  font-family: "Quicksand", sans-serif;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.popup-content {
+  background-color: #e6ded8;
+  padding: 20px;
+  border-radius: 20px;
+  font-family: "Quicksand", sans-serif;
+  min-width: 100%; /* Adjust max width for larger screens */
+  max-height: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+#popup {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(92, 69, 49, 0.8);  
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  max-width: 90%;
+  width: 1100px; /* Smaller fixed width */
+  max-height: 90vh;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transition: opacity 0.3s ease;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  scrollbar-width: thin;
+  
+  scrollbar-color: #af9582 transparent;
+}
+.rating-display {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+.provider-item {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  background: #ffffff;
+  transition: transform 0.2s;
+}
+
+.provider-item:hover {
+  transform: scale(1.02);
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #837062;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #af9582; /* Darker shade on hover */
+}
+
+.close {
+  top: 20px;
+  right: 20px;
+  color: #69594e; /* Adjust if needed */
+}
+.provider-image img {
+  max-height: 400px;
+  min-width: 400px;
+  height: auto; /* Set desired height */
+  /* Maintain aspect ratio */
+  object-fit: cover; /* Optional: controls how the image fits in the container */
+}
+
+@media (max-width: 768px) {
+  #popup {
+    width: 90%; /* Increase to 90% for tablets and smaller screens */
+    height: auto; /* Allow height to adjust */
+    padding: 15px; /* Adjust padding */
+  }
+
+  .popup-content {
+    padding: 15px; /* Adjust content padding */
+  }
+}
+
+@media (max-width: 480px) {
+  #popup {
+    width: 95%; /* Full width for mobile */
+    height: auto; /* Auto height */
+    padding: 10px; /* Less padding on mobile */
+  }
+
+  .popup-content {
+    padding: 10px; /* Less padding for mobile */
+  }
+}
+
+
+
+/*for smaller screens*/
+@media (max-width: 700px) {
+  .main-content {
+    padding: 40px 15px;
+  }
+
+  .description p {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .image-container img {
+    max-width: 150px;
+    margin-top: -50px;
+  }
+ 
+}
