@@ -56,7 +56,7 @@ try {
     }
 
     $userMessage = $data['message'];
-    $API_KEY = 'AIzaSyD_trEZ-AjrZlTj27D9Og5e7mjKhvuB6dE';
+    $API_KEY = '';
     $API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${API_KEY}";
 
     $requestBody = [
